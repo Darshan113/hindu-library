@@ -1,0 +1,87 @@
+@import 'colors';
+
+// Menubar
+.p-menubar {
+    background: $primary-saffron !important;
+    border: none !important;
+    padding: 10px 20px !important;
+
+    .p-menuitem-link {
+        color: $white !important;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $secondary-gold !important;
+        }
+    }
+}
+
+// Card
+.p-card {
+    border-radius: 15px !important;
+    box-shadow: 0 8px 20px $shadow-color !important;
+    border: 2px solid $border-gold !important;
+
+    .p-card-header {
+        background: linear-gradient(135deg, $primary-saffron, $secondary-gold) !important;
+        border-top-left-radius: 15px !important;
+        border-top-right-radius: 15px !important;
+        padding: 20px !important;
+    }
+
+    .p-card-content {
+        padding: 30px !important;
+    }
+
+    .p-card-footer {
+        padding: 20px !important;
+        background: $off-white !important;
+        border-bottom-left-radius: 15px !important;
+        border-bottom-right-radius: 15px !important;
+    }
+}
+
+// Buttons
+.p-button {
+    font-size: 1rem !important;
+    padding: 10px 20px !important;
+    transition: transform 0.2s, box-shadow 0.3s !important;
+
+    &:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 10px $hover-shadow !important;
+    }
+
+    &.p-button-warning {
+        background: $primary-saffron !important;
+        border-color: $primary-saffron !important;
+    }
+
+    &.p-button-secondary {
+        background: $secondary-gold !important;
+        border-color: $secondary-gold !important;
+        color: $dark-text !important;
+    }
+
+    &.p-button-success {
+        background: $success-green !important;
+        border-color: $success-green !important;
+    }
+}
+
+// Dropdown
+// .p-dropdown {
+//     background: $white !important;
+//     border-radius: 20px !important;
+//     border: 1px solid $border-gold !important;
+//     transition: all 0.3s !important;
+
+//     &:hover {
+//         border-color: $primary-saffron !important;
+//     }
+
+//     .p-dropdown-label {
+//         color: $dark-text !important;
+//     }
+// }

@@ -1,0 +1,34 @@
+@import 'colors';
+
+// Webkit-based browsers (Chrome, Edge, Safari)
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $off-white; // Light saffron background
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-saffron; // Saffron thumb
+  border-radius: 10px;
+  border: 2px solid $off-white; // Border to match track
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $secondary-gold; // Gold on hover
+}
+
+// Firefox (using scrollbar-color and scrollbar-width)
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $primary-saffron $off-white;
+}
+
+// Optional: Corner styling for Webkit
+::-webkit-scrollbar-corner {
+  background: $off-white;
+}
