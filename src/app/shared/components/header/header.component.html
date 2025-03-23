@@ -1,0 +1,13 @@
+<p-menubar [model]="menuItems" class="animated-header">
+    <img src="../../../../assets/images/om.jpeg" alt="Om Symbol" class="om-logo" />
+    <div class="language-switcher" (click)="$event.stopPropagation()">
+      <p-dropdown
+        [options]="languages"
+        [(ngModel)]="selectedLanguage"
+        (onChange)="changeLanguage($event)"
+        optionLabel="label"
+        optionValue="value"
+        appendTo="body"
+      ></p-dropdown>
+    </div>
+</p-menubar>

@@ -1,0 +1,81 @@
+<app-header></app-header>
+<div class="auth-container">
+    <p-card class="auth-card">
+      <ng-template pTemplate="header">
+        <h1 class="fade-in">{{ 'register_title' | translate }}</h1>
+      </ng-template>
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <div class="field">
+          <label for="name">{{ 'name_label' | translate }}</label>
+          <input
+            pInputText
+            id="name"
+            type="text"
+            formControlName="name"
+            placeholder="{{ 'name_placeholder' | translate }}"
+            [ngClass]="{'p-invalid': registerForm.get('name')?.invalid && registerForm.get('name')?.touched}"
+          />
+          <small *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="p-error">
+            {{ 'name_error' | translate }}
+          </small>
+        </div>
+        <div class="field">
+          <label for="email">{{ 'email_label' | translate }}</label>
+          <input
+            pInputText
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="{{ 'email_placeholder' | translate }}"
+            [ngClass]="{'p-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}"
+          />
+          <small *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="p-error">
+            {{ 'email_error' | translate }}
+          </small>
+        </div>
+        <div class="field">
+          <label for="password">{{ 'password_label' | translate }}</label>
+          <p-password
+            id="password"
+            formControlName="password"
+            placeholder="{{ 'password_placeholder' | translate }}"
+            [toggleMask]="true"
+            [feedback]="false"
+            [ngClass]="{'p-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}"
+          ></p-password>
+          <small *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="p-error">
+            {{ 'password_error' | translate }}
+          </small>
+        </div>
+        <div class="field">
+          <label for="confirmPassword">{{ 'confirm_password_label' | translate }}</label>
+          <p-password
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            placeholder="{{ 'confirm_password_placeholder' | translate }}"
+            [toggleMask]="true"
+            [feedback]="false"
+            [ngClass]="{'p-invalid': registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched}"
+          ></p-password>
+          <small *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched" class="p-error">
+            {{ 'confirm_password_error' | translate }}
+          </small>
+        </div>
+        <div class="actions">
+          <p-button
+            type="submit"
+            label="{{ 'register_button' | translate }}"
+            icon="pi pi-user-plus"
+            styleClass="p-button-raised p-button-warning"
+            [disabled]="registerForm.invalid"
+          ></p-button>
+          <p-button
+            label="{{ 'login_link' | translate }}"
+            styleClass="p-button-link"
+            [routerLink]="['/auth/login']"
+          ></p-button>
+        </div>
+      </form>
+    </p-card>
+  </div>
+  <app-footer></app-footer>

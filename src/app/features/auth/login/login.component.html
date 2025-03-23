@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div class="auth-container">
+    <p-card class="auth-card">
+      <ng-template pTemplate="header">
+        <h1 class="fade-in">{{ 'login_title' | translate }}</h1>
+      </ng-template>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="field">
+          <label for="email">{{ 'email_label' | translate }}</label>
+          <input
+            pInputText
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="{{ 'email_placeholder' | translate }}"
+            [ngClass]="{'p-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}"
+          />
+          <small *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="p-error">
+            {{ 'email_error' | translate }}
+          </small>
+        </div>
+        <div class="field">
+          <label for="password">{{ 'password_label' | translate }}</label>
+          <p-password
+            id="password"
+            formControlName="password"
+            placeholder="{{ 'password_placeholder' | translate }}"
+            [toggleMask]="true"
+            [feedback]="false"
+            [ngClass]="{'p-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"
+          ></p-password>
+          <small *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="p-error">
+            {{ 'password_error' | translate }}
+          </small>
+        </div>
+        <div class="actions">
+          <p-button
+            type="submit"
+            label="{{ 'login_button' | translate }}"
+            icon="pi pi-sign-in"
+            styleClass="p-button-raised p-button-warning"
+            [disabled]="loginForm.invalid"
+          ></p-button>
+          <p-button
+            label="{{ 'register_link' | translate }}"
+            styleClass="p-button-link"
+            [routerLink]="['/auth/register']"
+          ></p-button>
+        </div>
+      </form>
+    </p-card>
+  </div>
+  <app-footer></app-footer>

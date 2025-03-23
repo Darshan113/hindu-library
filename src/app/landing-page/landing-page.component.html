@@ -1,11 +1,13 @@
+
+<app-header></app-header>
 <div class="landing-container">
     <!-- Header -->
-    <p-menubar [model]="menuItems" class="animated-header">
+    <!-- <p-menubar [model]="menuItems" class="animated-header">
       <img src="../../assets/images/om.jpeg" alt="Om Symbol" class="om-logo" />
       <div class="language-switcher">
         <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" (onChange)="changeLanguage($event)" optionLabel="label" optionValue="value"></p-dropdown>
       </div>
-    </p-menubar>
+    </p-menubar> -->
   
     <!-- Main Content -->
     <div class="content">
@@ -30,11 +32,13 @@
     </div>
   
     <!-- Footer -->
-    <p-footer>
+    <!-- <p-footer>
       <div class="footer-content">
         <h3>{{ 'footer_title' | translate }}</h3>
         <p>{{ 'footer_description' | translate }}</p>
         <p>{{ 'footer_contact' | translate }}</p>
       </div>
-    </p-footer>
+    </p-footer> -->
   </div>
+  <app-footer></app-footer>
+  

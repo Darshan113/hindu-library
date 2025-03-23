@@ -2,18 +2,30 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrimeNGModule } from './primeng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HeaderComponent,
+    FooterComponent
+  ],
   imports: [
     CommonModule,
-    PrimeNGModule
+    FormsModule,
+    ReactiveFormsModule,
+    PrimeNGModule,
+    TranslateModule
   ],
   exports: [
     CommonModule,
     PrimeNGModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }

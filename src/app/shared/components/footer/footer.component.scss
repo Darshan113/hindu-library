@@ -1,0 +1,40 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/typography';
+@import '../../../../styles/utilities';
+
+.footer-content {
+  z-index: 1;
+  background: $primary-saffron;
+  color: $white;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 -4px 10px $shadow-color;
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 10px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 30px 15px;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}

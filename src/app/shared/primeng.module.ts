@@ -5,6 +5,7 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
 import { DropdownModule } from 'primeng/dropdown';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   exports: [
@@ -13,7 +14,8 @@ import { DropdownModule } from 'primeng/dropdown';
     InputTextModule,
     CardModule,
     MenubarModule,
-    DropdownModule
+    DropdownModule,
+    PasswordModule
   ]
 })
 export class PrimeNGModule { }

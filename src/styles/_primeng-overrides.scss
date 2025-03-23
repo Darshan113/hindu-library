@@ -85,3 +85,14 @@
 //         color: $dark-text !important;
 //     }
 // }
+
+.p-password {
+    width: 100%;
+    .p-inputtext {
+        width: 100%;
+    }
+}
+
+p-password {
+    padding: 0 !important;
+}
