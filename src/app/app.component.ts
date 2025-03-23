@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TranslationService } from './core/services/translation.service';
+import { LanguageEnum } from './core/constants/languages.constant';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'hindu-library';
+  LanguageEnum = LanguageEnum;
+
+  constructor(private translationService: TranslationService) {}
+
+  switchLanguage(lang: LanguageEnum) {
+    this.translationService.switchLanguage(lang);
+  }
 }

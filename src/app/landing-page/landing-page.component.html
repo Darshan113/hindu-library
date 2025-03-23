@@ -1,0 +1,40 @@
+<div class="landing-container">
+    <!-- Header -->
+    <p-menubar [model]="menuItems" class="animated-header">
+        <img src="assets/images/om.gif" alt="Om Symbol" class="om-logo" />
+        <div class="language-switcher">
+          <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" (onChange)="changeLanguage($event)" optionLabel="label" optionValue="value"></p-dropdown>
+        </div>
+    </p-menubar>
+
+    <!-- Main Content -->
+    <div class="content">
+        <p-card class="shloka-card">
+            <ng-template pTemplate="header">
+                <h1 class="fade-in">{{ 'welcome' | translate }}</h1>
+            </ng-template>
+            <div class="shloka">
+                <p class="sanskrit">{{ 'shloka_sanskrit' | translate }}</p>
+                <p class="translation">{{ 'shloka_translation' | translate }}</p>
+                <p class="invite">{{ 'shloka_invite' | translate }}</p>
+            </div>
+            <ng-template pTemplate="footer">
+                <p-button label="{{ 'login' | translate }}" icon="pi pi-sign-in" [routerLink]="['/auth/login']"
+                    styleClass="p-button-raised"></p-button>
+                <p-button label="{{ 'register' | translate }}" icon="pi pi-user-plus" [routerLink]="['/auth/register']"
+                    styleClass="p-button-raised p-button-secondary"></p-button>
+                <p-button label="{{ 'guest_login' | translate }}" icon="pi pi-user" (click)="guestLogin()"
+                    styleClass="p-button-raised p-button-help"></p-button>
+            </ng-template>
+        </p-card>
+    </div>
+
+    <!-- Footer -->
+    <p-footer>
+        <div class="footer-content">
+            <h3>{{ 'footer_title' | translate }}</h3>
+            <p>{{ 'footer_description' | translate }}</p>
+            <p>{{ 'footer_contact' | translate }}</p>
+        </div>
+    </p-footer>
+</div>
