@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="dashboard-container">
+  <div class="welcome-section">
+    <p-card>
+      <ng-template pTemplate="header">
+        <h1 class="fade-in">{{ 'dashboard_welcome' | translate }} {{ userName }}!</h1>
+      </ng-template>
+      <p>{{ 'dashboard_message' | translate }}</p>
+    </p-card>
+  </div>
+
+  <div class="recent-books">
+    <h2>{{ 'recent_books' | translate }}</h2>
+    <div class="book-list">
+      <!-- Placeholder for recent books -->
+      <p-card *ngFor="let book of recentBooks" class="book-card">
+        <ng-template pTemplate="header">
+          <h3>{{ book.title }}</h3>
+        </ng-template>
+        <p>{{ book.description }}</p>
+        <ng-template pTemplate="footer">
+          <p-button
+            label="{{ 'read_now' | translate }}"
+            icon="pi pi-book"
+            styleClass="p-button-raised p-button-warning"
+            [routerLink]="['/reader', book.id]"
+          ></p-button>
+        </ng-template>
+      </p-card>
+      <p *ngIf="!recentBooks.length">{{ 'no_recent_books' | translate }}</p>
+    </div>
+  </div>
+
+  <div class="quick-links">
+    <h2>{{ 'quick_links' | translate }}</h2>
+    <div class="links">
+      <p-button
+        label="{{ 'library' | translate }}"
+        icon="pi pi-book"
+        styleClass="p-button-raised p-button-secondary"
+        [routerLink]="['/library']"
+      ></p-button>
+      <p-button
+        label="{{ 'favorites' | translate }}"
+        icon="pi pi-heart"
+        styleClass="p-button-raised p-button-secondary"
+        [routerLink]="['/favorites']"
+      ></p-button>
+      <p-button
+        label="{{ 'search' | translate }}"
+        icon="pi pi-search"
+        styleClass="p-button-raised p-button-secondary"
+        [routerLink]="['/search']"
+      ></p-button>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

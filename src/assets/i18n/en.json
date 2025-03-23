@@ -29,5 +29,16 @@
     "login_button": "Login",
     "register_button": "Register",
     "register_link": "Don't have an account? Register",
-    "login_link": "Already have an account? Login"
+    "login_link": "Already have an account? Login",
+    "dashboard": "Dashboard",
+    "logout": "Logout",
+    "dashboard_welcome": "Welcome",
+    "dashboard_message": "Explore your personal library, favorites, and more!",
+    "recent_books": "Recently Viewed Books",
+    "no_recent_books": "No recently viewed books yet.",
+    "quick_links": "Quick Links",
+    "library": "My Library",
+    "favorites": "Favorites",
+    "search": "Search Books",
+    "read_now": "Read Now"
 }
